@@ -1,0 +1,15 @@
+<ion-view title="Sessions" id="sessions">
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+<div ng-if="loadingSessions">
+	<img src="../img/loading.gif"/>
+</div>
+<div ng-if="!loadingSessions" ng-repeat="session in sessions" class="list card">
+	<div class="item item-divider">{{session.id}} - {{session.title}}</div>
+	<div>
+		<img src="../img/session.jpg" width="50" height="50" alt="session" style="display: inline; float: left;"/>
+		<div style="display: inline; float: left;" class="item item-body">{{session.description}}</div>
+		<a ui-sref="session({id: session.id})" class="button button-stable  button-block icon ion-android-arrow-dropright-circle">View details</a>
+	</div>		
+</div>  
+</ion-content>
+</ion-view>
