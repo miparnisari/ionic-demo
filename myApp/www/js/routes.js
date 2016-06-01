@@ -25,6 +25,12 @@ angular.module('app.routes', [])
     { url: "/session/:id", 
       templateUrl: "templates/session.html", 
       controller: 'SessionController'
+  })
+  
+  .state('contacts', 
+    { url: "/contacts", 
+      templateUrl: "templates/contacts.html", 
+      controller: 'ContactsController'
   });
 
 

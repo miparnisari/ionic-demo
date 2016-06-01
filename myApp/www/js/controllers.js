@@ -10,6 +10,14 @@ angular.module('app.controllers', [])
 	}
 })
 
+.controller('ContactsController', function($scope, ContactService, $ionicLoading) {
+  $ionicLoading.show();
+  ContactService.getContacts().then(function(contacts) {
+    $scope.contacts = contacts;
+    $ionicLoading.hide();
+  });
+})
+
 .controller('SessionsController', function($scope, SessionFactory, $timeout) {
 	$scope.loadingSessions = true;
 
